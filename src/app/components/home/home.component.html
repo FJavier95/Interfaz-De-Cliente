@@ -1,0 +1,54 @@
+<html>
+
+<body>
+    <table class="table table-striped" *ngFor="let client of clients  | slice:0:tablas; let i = index;">
+        <thead class="thead-dark">
+            <tr style="display: flex;">
+                <th style="text-align: center; width: 33.3%;" *ngFor="let client of clients | slice:columnas[i]:columnas[i]+3; let j = index;" scope="col">Macetero {{client.letra}}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr style="background-color: white; display: flex;">
+                <td style="width: 33.3%;" *ngFor="let client of clients | slice:columnas[i]:columnas[i]+3; let z = index;">
+                    <div style="display: flex;justify-content: center;">
+                        <img class="card-img-top images" style="width: 250px;" alt="Responsive image" *ngIf="client.estado == 3" src="../../../assets/planta feliz.jpg">
+                        <img class="card-img-top images" style="width: 250px;" alt="Responsive image" *ngIf="client.estado == 2" src="../../../assets/planta neutra.JPG">
+                        <img class="card-img-top images" style="width: 250px;" alt="Responsive image" *ngIf="client.estado == 1" src="../../../assets/planta triste.JPG">
+                        <div style="display: grid;">
+                            <img (click)="graficaCalidad(client.thingsboardId)" style="width: 50px;height:50px; margin-top:20%;" src="../../../assets/carbon-dioxide.png">
+                            <img (click)="graficaHumedad(client.thingsboardId)" style="width: 50px;height:50px; margin-top:20%;" src="../../../assets/drop.png">
+                            <img (click)="graficaLuminosidad(client.thingsboardId)" style="width: 50px;height:50px; margin-top:20%;" src="../../../assets/sunny.png">
+                            <img (click)="graficaTemperatura(client.thingsboardId)" style="width: 50px;height:50px; margin-top:20%;" src="../../../assets/thermometer.png">
+                        </div>
+                        <div style="display: grid;align-items: center;">
+                            <div class="progress" style="width: 10rem; margin-left: 10%;" (click)="graficaCalidad(client.thingsboardId)">
+                                <div id="calidadProgreso" class="progress-bar progress-bar-striped bg-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+                                </div>
+                            </div>
+
+                            <div class="progress" style="width: 10rem; margin-left: 10%;" (click)="graficaHumedad(client.thingsboardId)">
+                                <div id="humedadProgreso" class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+
+                                </div>
+                            </div>
+
+                            <div class="progress" style="width: 10rem; margin-left: 10%;" (click)="graficaLuminosidad(client.thingsboardId)">
+                                <div id="luminosidadProgreso" class="progress-bar progress-bar-striped bg-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+
+                                </div>
+                            </div>
+
+                            <div class="progress" style="width: 10rem; margin-left: 10%;" (click)="graficaTemperatura(client.thingsboardId)">
+                                <div id="temperaturaProgreso" class="progress-bar progress-bar-striped bg-danger" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" value="100">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</body>
+
+</html>

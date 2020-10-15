@@ -1,0 +1,65 @@
+<!--<div class="container-fluid">
+    <div class="row" style="justify-content: center;">
+        <main role="main" class="col-md-9 col-lg-10 pt-3 px-4">
+            <div class="chartjs-size-monitor">
+                <div class="chartjs-size-monitor-expand">
+                    <div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div>
+                </div>
+                <div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                    <div style="position:absolute;width:200%;height:200%;left:0; top:0"></div>
+                </div>
+            </div>
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+                <h1 class="h2">{{parametro}}</h1>
+
+
+                <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                Parametro <span class="caret"></span>
+                                </button>
+                        <ul class="dropdown-menu" role="menu">
+                            <li style="text-align: center;">
+                                <button (click)=seleccionarParametro(1) style="border: none; background-color: white;">Temperatura</button>
+                            </li>
+                            <li style="text-align: center;">
+                                <button (click)=seleccionarParametro(2) style="border: none; background-color: white;">Humedad</button>
+                            </li>
+                            <li style="text-align: center;">
+                                <button (click)=seleccionarParametro(3) style="border: none; background-color: white;">Calidad Aire</button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                              Macetero 1 <span class="caret"></span>
+                            </button>
+                        <ul class="dropdown-menu" role="menu">
+                            <li *ngFor="let grupo of grupos; let i = index;" style="text-align: center;">
+                                <button (click)=comparar(grupo.macetero) style="border: none; background-color: white;">Macetero {{grupo.macetero}}</button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                Macetero 2 <span class="caret"></span>
+                                </button>
+                        <ul class="dropdown-menu" role="menu">
+                            <li *ngFor="let grupo of grupos; let i = index;" style="text-align: center;">
+                                <button (click)=comparar1(grupo.macetero) style="border: none; background-color: white;">Macetero {{grupo.macetero}}</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+
+            </div>
+            <p *ngIf="parametro == 'Temperatura'">Grados</p>
+            <p *ngIf="parametro == 'Humedad'">%</p>
+            <p *ngIf="parametro == 'Calidad del Aire'">%</p>
+            <canvas class="my-4 chartjs-render-monitor" baseChart width="1200" height="800" [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions" [colors]="lineChartColorsGrey" [legend]="lineChartLegend" [chartType]="lineChartType" width="1538"
+                height="649" style="display: block; width: 1538px; height: 649px;"> </canvas>
+            <p style="text-align: right;">Horas</p>
+        </main>
+    </div>
+</div>-->

@@ -1,0 +1,11 @@
+.nav-color {
+    background-color: #121313;
+    height: 50px;
+}
+
+.navbar-botons {
+    margin-left: 50px;
+    display: flex;
+    float: none;
+    list-style: none;
+}

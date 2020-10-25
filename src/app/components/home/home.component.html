@@ -23,7 +23,7 @@
                         </div>
 
                         <div style="display: grid;align-items: center;width: 25%;">
-                            <div style="height:0px"> Average last hour {{fecha | date: 'dd-MMM-yyyy HH:MM:ss'}} :</div>
+                            <div style="height:0px"> Average last hour {{fecha | date: 'dd-MMM-yyyy HH:mm'}} </div>
                             <div style="display: flex;">
                                 <div class="progress" style="width: 10rem; margin-left: 10%;" (click)="graficaCalidad(client.thingsboardId)">
                                     <div id="calidadProgreso" class="progress-bar progress-bar-striped bg-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">

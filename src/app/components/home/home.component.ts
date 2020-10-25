@@ -35,9 +35,9 @@ export class HomeComponent {
   calidad: number[] = [];
   humedad: number[] = [];
   cliente: Client;
-
+fecha:Date;
   constructor(private _router: Router, private service: UploadService) {
-
+this.fecha = new Date();
     this.recuperarClientes();
 
     setTimeout(() => this.clients.forEach(client => {
@@ -63,7 +63,7 @@ export class HomeComponent {
                     element.style.height = '20rem';
                     this.humedadProgreso = this.sumas[0] / this.humedad.length;
                     element.style.width = this.humedadProgreso + '%';
-                    this.temperaturaProgresoString = this.temperaturaProgreso.toString();
+                    this.humedadProgresoString = this.humedadProgreso.toString();
                   }
                   if (result[i].sensor.tipoSensorId == 'Temperatura Ambiental' || result[i].sensor.tipoSensorId == 'Temperatura Superficie') {
                     this.temperatura.push(result[i].valor);
@@ -72,15 +72,20 @@ export class HomeComponent {
                     element.style.height = '20rem';
                     this.temperaturaProgreso = this.sumas[1] / this.temperatura.length;
                     element.style.width = this.temperaturaProgreso + '%';
+                    this.temperaturaProgresoString = this.temperaturaProgreso.toString();
                   }
-                  if (result[i].sensor.tipoSensorId == 'Co2' && result[i].valor != 449) {
+                  if (result[i].sensor.tipoSensorId == 'Co2') {
                     var valor = ((2000 - result[i].valor) * 100) / 1550;
                     this.calidad.push(result[i].valor);
                     this.sumas[2] = this.sumas[2] + +result[i].valor;
                     var element = document.getElementById("calidadProgreso");
                     element.style.height = '20rem';
                     this.calidadProgreso = this.sumas[2] / this.calidad.length;
+                    if(this.calidadProgreso == 449){
+                      this.calidadProgreso = -1;
+                    }
                     element.style.width = this.calidadProgreso + '%';
+                    this.calidadProgresoString = this.calidadProgreso.toString();
                   }
                   if (result[i].sensor.tipoSensorId == 'Luminosidad') {
                     this.luminosidad.push(result[i].valor);
@@ -89,6 +94,7 @@ export class HomeComponent {
                     element.style.height = '20rem';
                     this.luminosidadProgreso = this.sumas[3] / this.luminosidad.length;
                     element.style.width = this.luminosidadProgreso + '%';
+                    this.luminosidadProgresoString = this.luminosidadProgreso.toString();
                   }
                 }
               }

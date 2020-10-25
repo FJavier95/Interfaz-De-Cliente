@@ -25,6 +25,10 @@ export class HomeComponent {
   luminosidadProgreso: number;
   calidadProgreso: number;
   humedadProgreso: number;
+  temperaturaProgresoString: string;
+  luminosidadProgresoString: string;
+  calidadProgresoString: string;
+  humedadProgresoString: string;
   sumas: number[] = [0, 0, 0, 0];
   temperatura: number[] = [];
   luminosidad: number[] = [];
@@ -59,6 +63,7 @@ export class HomeComponent {
                     element.style.height = '20rem';
                     this.humedadProgreso = this.sumas[0] / this.humedad.length;
                     element.style.width = this.humedadProgreso + '%';
+                    this.temperaturaProgresoString = this.temperaturaProgreso.toString();
                   }
                   if (result[i].sensor.tipoSensorId == 'Temperatura Ambiental' || result[i].sensor.tipoSensorId == 'Temperatura Superficie') {
                     this.temperatura.push(result[i].valor);
@@ -112,11 +117,11 @@ export class HomeComponent {
           var sensores: Sensor[] = [];
           let cliente = new Client(clientes[i].id, clientes[i].descripcion, clientes[i].letra, clientes[i].thingsboardId, new Valores(), 2, sensores);
           this.clients.push(cliente);
-          if ((i % 3) === 0) {
+          /*if ((i % 3) === 0) {
             this.columnas.push(i);
-          }
+          }*/
         }
-        this.tablas = Math.ceil(this.clients.length / 3);
+        //this.tablas = Math.ceil(this.clients.length / 3);*/
         resolve();
       },
         err => console.log("El ERROR producido", err),

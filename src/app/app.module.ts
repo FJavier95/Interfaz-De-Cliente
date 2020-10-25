@@ -15,6 +15,7 @@ import { GraficaCalidadComponent } from './components/grafica-calidad/grafica-ca
 import { GraficaLuminosidadComponent } from './components/grafica-luminosidad/grafica-luminosidad.component';
 import { TooltipModule } from 'ng2-tooltip-directive';
 import { SitemapComponent } from './components/sitemap/sitemap.component';
+import { LandingComponent } from './components/landing/landing.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,6 +28,7 @@ import { SitemapComponent } from './components/sitemap/sitemap.component';
     GraficaHumedadComponent,
     GraficaLuminosidadComponent,
     SitemapComponent,
+    LandingComponent,
   ],
   imports: [
     BrowserModule,

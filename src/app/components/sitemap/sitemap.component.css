@@ -266,18 +266,18 @@ body {
     content: '';
     position: absolute;
     border-width: 0;
-    border-color: #e3e3e3;
+    border-color: white;
     border-style: solid;
     z-index: -1;
     /* border-color: red; */
 }
 
 .primaryNav>ul>li:before {
-    height: 1.375em;
-    top: -1.375em;
+    height: 9.375em;
+    top: -8.375em;
     ;
     right: calc(50% + .625em);
-    width: calc(100% - 2px);
+    width: calc(0% - 2px);
     border-top-width: 2px;
     border-right-width: 2px;
     /* border-color: red; */
